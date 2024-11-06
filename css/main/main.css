@@ -1,0 +1,436 @@
+/* Основные стили для всех устройств */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.logo-container {
+    margin-top: 20px;
+}
+
+.logo {
+    width: 120px;
+    height: auto;
+}
+
+.balance {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.buttons {
+    margin: 20px 0;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button img.icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.wallet-btn {
+    background-color: white;
+    color: black;
+}
+
+.earn-btn {
+    background-color: #A52A2A;
+    color: white;
+}
+
+.withdraw-btn {
+    background-color: #8B4513;
+    color: white;
+}
+
+/* Навигационная панель */
+.navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    align-items: center;
+    background-color: black;
+    z-index: 1000;
+    height: 60px;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #656565;
+    text-decoration: none;
+    flex-grow: 1;
+}
+
+.nav-item img.nav-icon {
+    width: 30px;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.nav-item span {
+    font-size: 12px;
+    color: #656565;
+}
+
+.nav-item.active span {
+    color: #ffffff;
+}
+
+.nav-item:hover span {
+    color: #ccc;
+}
+
+.nav-item:hover img.nav-icon {
+    filter: brightness(1.2);
+}
+
+/* Основные стили модального окна */
+.modal {
+    position: fixed;
+    left: 50%;
+    bottom: -100%; /* Начальное положение модального окна (за пределами экрана) */
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 100%;
+    height: 50%;
+    background-color: #222;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    z-index: 1001;
+    overflow: hidden;
+    opacity: 0; /* Изначальная прозрачность */
+    transition: bottom 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.modal.show {
+    bottom: 0; /* Плавный подъем окна наверх */
+    opacity: 1; /* Плавное появление */
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.modal-overlay.show {
+    display: block;
+    opacity: 1;
+}
+
+.swipe-handle {
+    width: 50px;
+    height: 5px;
+    background: #aaa;
+    border-radius: 5px;
+    margin: 0 auto 20px;
+}
+
+.modal-header {
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.modal-body input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.modal-body button {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    background-color: #99241c;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.modal-body button:hover {
+    background-color: #218838;
+}
+
+/* --- Медиа-запросы для адаптивности --- */
+
+/* Основные стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 10px;
+}
+
+/* Заголовок */
+.header {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.header h1 {
+    font-size: 32px;
+    color: white;
+}
+
+.header p {
+    font-size: 16px;
+    color: #999;
+    margin-top: 10px;
+}
+
+/* Список билетов */
+.ticket-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 20px 0;
+}
+
+.ticket {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ticket h2 {
+    font-size: 20px;
+    color: white;
+    text-align: left;
+}
+
+.ticket p {
+    font-size: 14px;
+    color: #ccc;
+    text-align: right;
+}
+
+/* Нижняя навигация */
+.navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    background-color: black;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #656565;
+    text-decoration: none;
+}
+
+.nav-item img.nav-icon {
+    width: 30px;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.nav-item span {
+    font-size: 12px;
+}
+
+.nav-item:hover span {
+    color: #ccc;
+}
+
+/* --- Адаптивные стили для планшетов (от 768px до 1024px) --- */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        max-width: 100%; /* Растягиваем контейнер на весь экран */
+        padding: 10px;
+        margin-top: 50%;
+    }
+
+    .header h1 {
+        font-size: 28px;
+    }
+
+    .header p {
+        font-size: 14px;
+    }
+
+    .ticket h2 {
+        font-size: 18px;
+    }
+
+    .ticket p {
+        font-size: 12px;
+    }
+
+    .navbar {
+        height: 100px; /* Уменьшаем высоту навигации для более компактного вида */
+    }
+    .nav-item img.nav-icon {
+        width: 50px; /* Уменьшаем иконки для лучшей адаптации */
+        margin-bottom: 3px;
+    }
+    .nav-item span {
+        font-size: 20px; /* Уменьшаем шрифт текста под иконками */
+    }
+}
+
+/* --- Адаптивные стили для телефонов (до 768px) --- */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 95%;
+        margin-top: 50%;
+    }
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+    .header p {
+        font-size: 15px;
+    }
+
+    .ticket {
+        padding: 15px;
+    }
+
+    .ticket h2 {
+        font-size: 16px;
+    }
+
+    .ticket p {
+        font-size: 12px;
+    }
+
+    .navbar {
+        height: 45px;
+    }
+
+    .navbar {
+        height: 80px;
+    }
+    .nav-item img.nav-icon {
+        width: 40px; /* Уменьшаем иконки для лучшей адаптации */
+        margin-bottom: 3px;
+    }
+    .nav-item span {
+        font-size: 18px; /* Уменьшаем шрифт текста под иконками */
+    }
+}
+
+/* --- Дополнительные стили для очень маленьких экранов (до 480px) --- */
+@media screen and (max-width: 480px) {
+    .header h1 {
+        font-size: 20px;
+        margin-top: 50%;
+    }
+
+    .header p {
+        font-size: 14px;
+    }
+
+    .ticket {
+        padding: 12px;
+    }
+
+    .ticket h2 {
+        font-size: 14px;
+    }
+
+    .ticket p {
+        font-size: 11px;
+    }
+
+    .navbar {
+        height: 50px;
+        padding: 5px 0; /* Уменьшаем верхние и нижние отступы для более компактного вида */
+    }
+    .nav-item img.nav-icon {
+        width: 25px; /* Еще больше уменьшаем размер иконок для узких экранов */
+        margin-bottom: 2px;
+    }
+    .nav-item span {
+        font-size: 12px; /* Минимальный размер шрифта для хорошей читаемости на маленьких экранах */
+    }
+}

@@ -1,0 +1,273 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.stats-title {
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.stats-info {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 18px;
+    text-align: left;
+    margin: 0 20px;
+}
+
+.stats-info p {
+    margin: 10px 0;
+}
+
+.geo-stats {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.geo-stats li {
+    color: #ccc;
+    margin: 5px 0;
+}
+
+
+/* Нижняя навигация */
+.navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    align-items: center;
+    background-color: black;
+    z-index: 1000;
+    height: 60px;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #656565;
+    text-decoration: none;
+}
+
+.nav-item img.nav-icon {
+    width: 30px;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.nav-item span {
+    font-size: 12px;
+}
+
+.nav-item.active span {
+    color: #fff;
+}
+
+.nav-item:hover span {
+    color: #ccc;
+}
+
+.icon-fall-container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.icon {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    animation: fall 5s linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        top: -50px;
+        opacity: 1;
+    }
+    100% {
+        top: 300px;
+        opacity: 0;
+    }
+}
+
+/* --- Адаптивные стили для планшетов --- */
+@media screen and (max-width: 1024px) {
+
+    .icon-fall-container {
+        height: 30%; /* Для очень маленьких экранов */
+    }
+
+    .header {
+        margin-top: 60%;
+    }
+
+    .header img {
+        width: 120px;
+    }
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+    .header p {
+        font-size: 15px;
+    }
+
+    .friend-container p {
+        font-size: 20px;
+    }
+
+    .invite-btn {
+        padding: 12px;
+        font-size: 16px;
+        margin-bottom: 10%;
+    }
+
+    .navbar {
+        height: 100px; /* Уменьшаем высоту навигации для более компактного вида */
+    }
+    .nav-item img.nav-icon {
+        width: 50px; /* Уменьшаем иконки для лучшей адаптации */
+        margin-bottom: 3px;
+    }
+    .nav-item span {
+        font-size: 20px; /* Уменьшаем шрифт текста под иконками */
+    }
+}
+
+/* --- Адаптивные стили для телефонов (до 768px) --- */
+@media screen and (max-width: 768px) {
+
+    .icon-fall-container {
+        height: 30%; /* Для очень маленьких экранов */
+    }
+
+    .header {
+        margin-top: 40%;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    .header img {
+        width: 120px;
+    }
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+    .header p {
+        font-size: 15px;
+    }
+
+    .friend-container p {
+        font-size: 20px;
+    }
+
+    .invite-btn {
+        padding: 10px;
+        font-size: 14px;
+        margin-bottom: 5%;
+    }
+
+    .navbar {
+        height: 80px;
+    }
+    .nav-item img.nav-icon {
+        width: 40px; /* Уменьшаем иконки для лучшей адаптации */
+        margin-bottom: 3px;
+    }
+    .nav-item span {
+        font-size: 18px; /* Уменьшаем шрифт текста под иконками */
+    }
+}
+
+/* --- Адаптив для очень маленьких экранов (до 480px) --- */
+@media screen and (max-width: 480px) {
+
+    .header {
+        margin-top: 25%;
+    }
+
+    .icon-fall-container {
+        height: 30%; /* Для очень маленьких экранов */
+    }
+
+    .header img {
+        width: 120px;
+    }
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+    .header p {
+        font-size: 15px;
+    }
+
+    .friend-container p {
+        font-size: 20px;
+    }
+
+    .invite-btn {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .navbar {
+        height: 50px;
+        padding: 5px 0; /* Уменьшаем верхние и нижние отступы для более компактного вида */
+    }
+    .nav-item img.nav-icon {
+        width: 25px; /* Еще больше уменьшаем размер иконок для узких экранов */
+        margin-bottom: 2px;
+    }
+    .nav-item span {
+        font-size: 12px; /* Минимальный размер шрифта для хорошей читаемости на маленьких экранах */
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .icon-fall-container {
+        height: 23%; /* Для очень маленьких экранов */
+    }
+
+    .header {
+        margin-top: 5%;
+    }
+}
