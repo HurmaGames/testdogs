@@ -73,6 +73,7 @@ body {
     font-size: 18px;
     cursor: pointer;
     text-align: center;
+    z-index: 1000;
 }
 
 .loading-dots {
